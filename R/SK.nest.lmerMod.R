@@ -21,10 +21,13 @@ SK.nest.lmerMod <- function(x,
 			   function(x) r = length(x))
 	reps <- aux_r[[my]]
 
-	aux_mt <- suppressWarnings(doBy::LSmeans(x,
-						 effect = m2))
+	aux_mt <- suppressMessages(emmeans::emmeans(x, 
+                             specs = m2, 
+                             level = 1 - sig.level))
 
-	aux_mt1 <- aux_mt$coef[,1]
+	aux_mt_df <- as.data.frame(aux_mt)
+  
+  aux_mt1 <- with(aux_mt_df,emmean)
 
 	aux_mt2 <- data.frame(aux_r[1:length(names(aux_r))-1],
 			      means = aux_mt1,
@@ -135,7 +138,7 @@ SK.nest.lmerMod <- function(x,
 				      fl1       = fl1,
 				      fl2       = fl2,
 				      sig.level = sig.level,
-				      aux_mt    = aux_mt)
+				      aux_mt    = aux_mt_df)
 
 	res <- list(out  = out,
 		    info = m.inf,

@@ -161,11 +161,15 @@ SK.lm <- function(x,
 			   function(x) r = length(x))
 	reps <- aux_r[[my]]
 
-	aux_mt <- suppressWarnings(doBy::LSmeans(x,
-						 effect = which,
-						 level = 1 - sig.level))
+	aux_mt <- suppressMessages(emmeans::emmeans(x, 
+                             specs = which, 
+                             level = 1 - sig.level))
 
-	aux_mt1 <- with(aux_mt,estimate)
+	#aux_mt1 <- with(aux_mt,estimate)
+ 
+  aux_mt_df <- as.data.frame(aux_mt)
+  
+  aux_mt1 <- with(aux_mt_df,emmean)
 
 	aux_mt2 <- data.frame(means = aux_mt1,
 			      reps = reps)
@@ -236,7 +240,7 @@ SK.lm <- function(x,
 			    forminter = forminter,
 			    which     = which,
 			    sig.level = sig.level,
-			    aux_mt    = aux_mt)
+			    aux_mt    = aux_mt_df)
 
 	res <- list(out  = out,
 		    info = m.inf,

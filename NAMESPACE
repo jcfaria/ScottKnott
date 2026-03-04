@@ -10,7 +10,7 @@ export(boxplot.SK)
 export(xtable.SK)
 
 # Import all packages listed as Imports or Depends
-importFrom(doBy, LSmeans)
+importFrom(emmeans, emmeans)
 importFrom(xtable, xtable)
 import(
  utils,
