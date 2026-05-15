@@ -1,11 +1,25 @@
 # ScottKnott 1.3-4 (2026-03-03)
 
+## New Features
+
+- Added a basic `testthat` test suite covering `SK` with `formula`, `aov`,
+  and `lm` inputs for balanced and unbalanced designs, as well as
+  `summary`, `print`, `plot`, and `xtable` methods.
+
 ## Changes
 
 - Removed the dependency on the `doBy` package. `doBy::LSmeans` produced
   unwanted side-effects in the console and in Sweave/knitr documents.
 - Added the `emmeans` package as a dependency.
 - All internal LSmeans calls have been replaced with `emmeans`.
+- `DESCRIPTION`: added `knitr`, `rmarkdown`, and `testthat (>= 3.0.0)` to
+  `Suggests`; set `VignetteBuilder: knitr`; added `BugReports` URL;
+  removed the obsolete `LazyLoad` field.
+- Demo files revised: corrected English, standardised argument style
+  (`dispersion=` replaces the abbreviated `di=`), and fixed three bugs:
+  duplicate variable `sk4` in `FE.R` (renamed to `sk5`/`sk6`),
+  spurious double comma in `RCBD.R`, and wrong variable name
+  `u_sk8` in `CRD.R` (renamed to `u_sk4`).
 
 ---
 
