@@ -2,10 +2,10 @@
 
 ## Changes
 
-- Removed the dependency on the `doBy` package. The `doBy::LSmeans` function
-  left undesirable residue in the console or when used with Sweave or knitr.
+- Removed the dependency on the `doBy` package. `doBy::LSmeans` produced
+  unwanted side-effects in the console and in Sweave/knitr documents.
 - Added the `emmeans` package as a dependency.
-- All internal LSmeans functions have been replaced by `emmeans`.
+- All internal LSmeans calls have been replaced with `emmeans`.
 
 ---
 
@@ -13,9 +13,10 @@
 
 ## Bug Fixes
 
-- Fixed the `mtext` command line that was out of context of the `axis1` argument.
+- Fixed an `mtext` call that was incorrectly placed outside the scope of the
+  `axis1` argument.
 - Fixed missing package anchors in `xtable.SK.Rd`.
-- In all functions that use `LSmeans` as object, replaced `aux_mt$coef[,1]`
+- In all functions returning a `LSmeans` object, replaced `aux_mt$coef[,1]`
   with `with(aux_mt, estimate)`.
 
 ---
@@ -24,7 +25,7 @@
 
 ## Changes
 
-- Adjustment of files as required by CRAN.
+- Files adjusted to meet CRAN requirements.
 
 ---
 
@@ -33,11 +34,11 @@
 ## New Features
 
 - Added new arguments `axis1` and `axis2` to the `plot` function, giving
-  greater flexibility to users who want to customise their own axes.
+  users greater flexibility to customise their own axes.
 
 ## Changes
 
-- Adjustment of files as required by CRAN.
+- Files adjusted to meet CRAN requirements.
 
 ---
 
@@ -45,7 +46,8 @@
 
 ## Changes
 
-- Fixed the `Version`, `Date` and `Description` items of the `DESCRIPTION` file.
+- Corrected the `Version`, `Date`, and `Description` fields in the
+  `DESCRIPTION` file.
 
 ---
 
@@ -53,7 +55,7 @@
 
 ## Changes
 
-- All documentation was corrected.
+- Corrected all documentation.
 
 ---
 
@@ -62,11 +64,11 @@
 ## New Features
 
 - New method for unbalanced data.
-- Added methods for `formula`, `lm` and `lmerMod` classes.
+- Added methods for `formula`, `lm`, and `lmerMod` classes.
 
 ## Changes
 
-- All documentation was corrected.
+- Corrected all documentation.
 
 ---
 
@@ -74,7 +76,7 @@
 
 ## Changes
 
-- Corrections in the documentation in accordance with CRAN requirements.
+- Corrected documentation to comply with CRAN requirements.
 
 ---
 
@@ -82,12 +84,12 @@
 
 ## Bug Fixes
 
-- Fixed a small bug in `SK.nest.aov.R`: lines that had `[:punct:]` (wrongly)
-  were changed to `[[:punct:]]` (correctly).
+- Fixed a bug in `SK.nest.aov.R`: occurrences of `[:punct:]` (incorrect)
+  replaced with `[[:punct:]]` (correct).
 
 ## Changes
 
-- Corrected documentation in accordance with CRAN requirements.
+- Corrected documentation to comply with CRAN requirements.
 
 ---
 
@@ -95,12 +97,12 @@
 
 ## Bug Fixes
 
-- Fixed a small bug in `SK.aov.R`: line 44 had an object `sig.level=0.05`
-  that prevented the exchange of probability.
+- Fixed a bug in `SK.aov.R`: line 44 contained a hard-coded `sig.level=0.05`
+  that overrode user-supplied significance levels.
 
 ## Changes
 
-- Updated the `CITATION` file. The package is now published in a scientific
+- Updated the `CITATION` file; the package is now published in a scientific
   journal.
 - Added GitHub and LEC URLs to the `DESCRIPTION` file.
 
@@ -110,8 +112,8 @@
 
 ## Changes
 
-- All calls to the old method `model.frame.aovlist` now call the generic
-  to meet CRAN requirements.
+- Replaced all direct calls to the deprecated `model.frame.aovlist` method
+  with calls to the generic, to meet CRAN requirements.
 - Released to CRAN.
 
 ---
@@ -120,8 +122,8 @@
 
 ## Changes
 
-- The source code has been deeply improved.
-- The documentation has been deeply updated.
+- Source code substantially improved.
+- Documentation substantially updated.
 
 ---
 
@@ -137,8 +139,8 @@
 
 ## Bug Fixes
 
-- Fixed a small bug in `SK.nest.aovlist.R`: lines that had `[:punct:]`
-  (wrongly) were changed to `[[:punct:]]` (correctly).
+- Fixed a bug in `SK.nest.aovlist.R`: occurrences of `[:punct:]` (incorrect)
+  replaced with `[[:punct:]]` (correct).
 
 ## New Features
 
@@ -152,9 +154,9 @@
 
 - Ivan Bezerra Allaman joined the project as co-author.
 - Sergio Oliveira no longer works on the project.
-- Changes in `SK.nest.aov.R` make it easier to study interactions.
-- The source code was improved.
-- Overall improvements in documentation and demos.
+- Revised `SK.nest.aov.R` to make the study of interactions easier.
+- Source code improved.
+- Overall improvements to documentation and demos.
 
 ---
 
@@ -171,10 +173,9 @@
 ## New Features
 
 - New dataset: `sorghum`.
-- The notation of factorial models now agrees with Wilkinson and Rogers (1973).
-- The methods `SK.nest.aov` and `SK.nest.aovlist` were enhanced to adapt to
-  the new notation.
-- The demos were enhanced.
+- The notation of factorial models now follows Wilkinson and Rogers (1973).
+- Updated `SK.nest.aov` and `SK.nest.aovlist` to support the new notation.
+- Demos improved.
 
 ---
 
@@ -182,7 +183,7 @@
 
 ## Changes
 
-- The S3 method `summary.SK.nest` was enhanced.
+- The S3 method `summary.SK.nest` improved.
 
 ---
 
@@ -191,7 +192,7 @@
 ## Changes
 
 - The classes `SK` and `SK.nest` have been simplified.
-- The S3 method to plot `SK` and `SK.nest` objects was enhanced.
+- The S3 method for plotting `SK` and `SK.nest` objects improved.
 
 ---
 
