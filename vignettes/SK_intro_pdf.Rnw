@@ -408,8 +408,9 @@ sk1_bp <- SK(y ~ x,
              which = 'x')
 
 boxplot(sk1_bp,
-        mean.col = 'red',
-        mean.lwd = 2)
+        mean.col    = 'red',
+        mean.lwd    = 2,
+        args.legend = list(x = 'topright'))
 @
 
 % ============================================================
