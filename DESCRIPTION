@@ -2,13 +2,13 @@ Package: ScottKnott
 Version: 1.4-0
 Date: 2026-05-14
 Title: The ScottKnott Clustering Algorithm
-Authors@R: c(person("José C.", "Faria",
+Authors@R: c(person("J. C.", "Faria",
                role = "aut",
                email = "joseclaudio.faria@gmail.com"),
-             person("Enio G.", "Jelihovschi",
+             person("E. G.", "Jelihovschi",
                role = "aut",
                email = "eniojelihovs@gmail.com"),
-             person("Ivan B.", "Allaman",
+             person("I. B.", "Allaman",
                role = c("aut", "cre"),
                email = "ivanalaman@gmail.com"))
 Author: Faria, J. C. [aut],
