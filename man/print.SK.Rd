@@ -18,7 +18,7 @@
 \arguments{
 	\item{x}{A given object of the class \code{SK}.}
 	\item{digits}{Minimal number of _significant_ digits. The default is 2.}
-	\item{\dots }{Further arguments (require by generic).}
+	\item{\dots}{Further arguments (required by generic).}
 }
 
 \author{
@@ -31,7 +31,7 @@
 }
 
 \examples{
-data(RCBD) 
+data(RCBD)
 
 sk <- with(RCBD,
        	   SK(y ~ blk + tra,
@@ -42,4 +42,3 @@ sk
 }
 
 \keyword{package}
-\keyword{SK}
