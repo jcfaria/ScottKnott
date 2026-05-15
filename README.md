@@ -46,7 +46,9 @@ sk1 <- with(CRD1,
                data = dfm,
                which = 'x'))
 summary(sk1)
-plot(sk1, dispersion = 'sd')
+plot(sk1, 
+     dispersion = 'sd',
+     d.col = 'steelblue')
 
 ## Randomized Complete Block Design (RCBD)
 data(RCBD)
@@ -56,7 +58,9 @@ sk2 <- with(RCBD,
                data = dfm,
                which = 'tra'))
 summary(sk2)
-plot(sk2, dispersion = 'ci', d.col = 'red')
+plot(sk2, 
+     dispersion = 'ci', 
+     d.col = 'red')
 ```
 
 ## Project Layout
