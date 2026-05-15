@@ -258,7 +258,8 @@ sp_sk1 <- SK(lm3,
 summary(sp_sk1)
 
 ## Nested: year1/tra
-## It is necessary to set the year error with the treatment error, in the order of the which argument.
+## It is necessary to set the year error with the treatment error,
+## in the order of the which argument.
 ## It is necessary to specify how to combine the error terms.
 sp_sk2 <-  SK(lm3,
               which='year:tra',
