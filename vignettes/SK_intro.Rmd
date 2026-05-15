@@ -267,13 +267,20 @@ plot(sk10,
 
 ### 8.2 Comparing all four options
 
-```{r plot-four, fig.width=8, fig.height=7, fig.cap="The four dispersion options on the same dataset (CRD1)."}
+```{r plot-four, fig.width=8, fig.height=7, fig.cap="The four dispersion options applied to CRD1. (A) mm: min-max range; (B) sd: standard deviation; (C) ci: individual confidence interval; (D) cip: pooled confidence interval."}
 op <- par(mfrow = c(2, 2), mar = c(4, 3, 4, 1))
 
-plot(sk1, dispersion = 'mm',  title = 'mm (min-max)', d.col = 'steelblue')
-plot(sk1, dispersion = 'sd',  title = 'sd (std.dev.)', d.col = 'tomato')
-plot(sk1, dispersion = 'ci',  title = 'ci (indiv.CI)', d.col = 'darkgreen')
-plot(sk1, dispersion = 'cip', title = 'cip (pooled)', d.col = 'purple')
+plot(sk1, dispersion = 'mm',  d.col = 'steelblue')
+mtext('(A)', side = 3, adj = 0, line = 2, font = 2)
+
+plot(sk1, dispersion = 'sd',  d.col = 'tomato')
+mtext('(B)', side = 3, adj = 0, line = 2, font = 2)
+
+plot(sk1, dispersion = 'ci',  d.col = 'darkgreen')
+mtext('(C)', side = 3, adj = 0, line = 2, font = 2)
+
+plot(sk1, dispersion = 'cip', d.col = 'purple')
+mtext('(D)', side = 3, adj = 0, line = 2, font = 2)
 
 par(op)
 ```
