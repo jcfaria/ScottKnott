@@ -31,16 +31,17 @@
 }
 
 \examples{
+data(RCBD)
+
+lm1 <- with(RCBD,
+            lm(y ~ blk + tra,
+               data=dfm))
+
+sk1 <- SK(lm1,
+          which='tra')
+
+tb <- xtable(sk1)
 \dontrun{
-  data(RCBD)
-  lm1 <- with(RCBD,
-              lm(y ~ blk + tra,
-                 data=dfm))
-
-  sk1 <- SK(lm1,
-            which='tra')
-
-  tb <- xtable(sk1)
   print(tb)
 }
 }

@@ -8,6 +8,7 @@ export(print.SK)
 export(summary.SK)
 export(boxplot.SK)
 export(xtable.SK)
+export(xtable)
 
 # Import all packages listed as Imports or Depends
 importFrom(emmeans, emmeans)
