@@ -95,7 +95,7 @@ R CMD INSTALL ScottKnott_X.X-X.tar.gz
 
 ---
 
-Developed by:
+Developed by:  
 Faria, J. C.; Jelihovschi, E. G.; Allaman, I. B.  
 Universidade Estadual de Santa Cruz - UESC  
 Departamento de Ciencias Exatas - DCEX  
