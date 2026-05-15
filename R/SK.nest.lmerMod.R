@@ -44,7 +44,7 @@ SK.nest.lmerMod <- function(x,
   nf3 <- unlist(strsplit(which,
                          split = ':'))[3] # nome do terceiro fator do which
 
-  if(is.null(fl2)){
+  if(is.null(fl2)) {
     # Interesse apenas na interacao dupla
 
     f1 <- levels(x@frame[[nf2]]) # correspondem aos fatores que se quer comparar!
@@ -57,8 +57,8 @@ SK.nest.lmerMod <- function(x,
     row.names(mt) <- paste(mt[,1],
                            mt[,2],
                            sep = '/')
-  } # Interesse na interacao tripla
-  else {
+  } else {
+    # Interesse na interacao tripla
 
     f1 <- levels(x@frame[[nf3]])
 

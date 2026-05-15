@@ -53,7 +53,7 @@ SK.lm <- function(x,
 
     n_errors <- length(many_errors)
 
-    if(n_errors > 1){# combinacoes de erros!!!
+    if(n_errors > 1) { # combinacoes de erros!!!
 
       aux_MSE <- NULL
       aux_dfr <- NULL
@@ -99,7 +99,7 @@ SK.lm <- function(x,
 
       }
 
-    } else {# nao ha combinacao de erros!!!
+    } else { # nao ha combinacao de erros!!!
 
       anov <- anova(x)
       SSE <- anov[rownames(anov) == error,][1,2] # sum square error
@@ -130,7 +130,7 @@ SK.lm <- function(x,
   }
 
   # Aqui nao ha interesse em interacoes!!!!
-  if(is.null(fl1) & !is.null(error)){#Um erro de interesse do usuario
+  if(is.null(fl1) & !is.null(error)) { # Um erro de interesse do usuario
 
     anov <- anova(x)
     SSE <- anov[rownames(anov) == error,][1,2] # sum square error

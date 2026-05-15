@@ -52,12 +52,12 @@ boxplot.SK <- function(x,
 
   if(length(auxinter) > 1){
     aux3$treat <- with(aux3,
-                       interaction(eval(parse(text=treat))))
+                       interaction(eval(parse(text = treat))))
     aux3$treat <- gsub(':',
                        '/',
                        aux3$treat)
     aux3 <- subset(aux3,
-                   treat%in%ltreat)
+                   treat %in% ltreat)
 
     treat <- 'treat'
   }
@@ -88,7 +88,7 @@ boxplot.SK <- function(x,
     op <- par('mar')       # Original par('mar')
     np <- op               # A copy
     np[3] <- ngroups + 1   # Changing top to show all letters
-    par(mar=np)            # Setting new par('mar')
+    par(mar = np)          # Setting new par('mar')
   }
 
   gr <- boxplot(aux22,
@@ -174,6 +174,6 @@ boxplot.SK <- function(x,
   }
 
   if(ngroups > 3){
-    par(mar=op)  # Restoring the original par('mar')
+    par(mar = op)  # Restoring the original par('mar')
   }
 }

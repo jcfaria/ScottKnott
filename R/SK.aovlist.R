@@ -46,7 +46,7 @@ SK.aovlist <- function(x,
 
     n_errors <- length(many_errors)
 
-    if(n_errors > 1){# combinacao de erros!!!
+    if(n_errors > 1) { # combinacao de erros!!!
 
       aux_SSE <- NULL
       aux_dfr <- NULL
@@ -92,7 +92,7 @@ SK.aovlist <- function(x,
         dfr <- numer/denom
 
       }
-    } else {# nao ha combinacao de erros!!!
+    } else { # nao ha combinacao de erros!!!
 
       SSE <- deviance(x[[error]]) # experimental error
       dfr <- df.residual(x[[error]])# experimental error

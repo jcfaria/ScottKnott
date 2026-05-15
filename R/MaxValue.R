@@ -32,7 +32,7 @@ MaxValue <- function(g,
   means <- meansrep[['means']]
   names(means) <- rownames(meansrep)
   reps <- meansrep[['reps']]
-  standerror <- sqrt(mMSE/reps)#here will be a vector with se of each treatment.
+  standerror <- sqrt(mMSE/reps) # here will be a vector with se of each treatment.
 
   for(k1 in k:(g-1)) {
     t1 <- sum(means[k:k1])

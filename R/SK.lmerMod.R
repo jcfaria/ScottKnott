@@ -43,7 +43,7 @@ SK.lmerMod <- function(x,
 
     n_errors <- length(many_errors)
 
-    if(n_errors > 1){# combinacao de erros!!!
+    if(n_errors > 1) { # combinacao de erros!!!
 
       aux_MSE1 <- lme4::VarCorr(x)
       aux_MSE <- c(sigma(x)^2,
@@ -106,7 +106,7 @@ SK.lmerMod <- function(x,
 
       }
 
-    } else {# nao ha combinacao de erros!!!
+    } else { # nao ha combinacao de erros!!!
 
       anov <- anova(x)
       SSE <- anov[rownames(anov) == error,][1,2] # sum square error
@@ -134,7 +134,7 @@ SK.lmerMod <- function(x,
   }
 
   # Aqui nao ha interesse em interacoes!!!!
-  if(is.null(fl1) & !is.null(error)){#Um erro de interesse do usuario
+  if(is.null(fl1) & !is.null(error)) { # Um erro de interesse do usuario
 
     aux_MSE <- lme4::VarCorr(x)
     MSE <- attr(aux_MSE[[error]], 'stddev')^2
