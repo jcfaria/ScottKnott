@@ -5,6 +5,14 @@
 - Added a basic `testthat` test suite covering `SK` with `formula`, `aov`,
   and `lm` inputs for balanced and unbalanced designs, as well as
   `summary`, `print`, `plot`, and `xtable` methods.
+- Added two vignettes: `SK_intro` (HTML, via R Markdown) and `SK_intro_pdf`
+  (PDF, via knitr/LaTeX), both covering quick start, accepted input classes,
+  unbalanced data, RCBD, factorial and split-plot designs, visualisation
+  options, tabular output, and mixed models.
+- `README.md` fully rewritten: badges (CRAN status, downloads, checks,
+  lifecycle, licence), key features, installation instructions (CRAN and
+  GitHub), quick-start examples, project layout, contributing guide, and
+  roadmap.
 
 ## Changes
 
