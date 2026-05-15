@@ -108,11 +108,11 @@
 % knitr global options
 <<setup, include=FALSE>>=
 knitr::opts_chunk$set(
-  collapse  = TRUE,
-  comment   = '#>',
-  fig.width  = 6,
+  collapse = TRUE,
+  comment = '#>',
+  fig.width = 6,
   fig.height = 4,
-  fig.align  = 'center'
+  fig.align = 'center'
 )
 @
 
@@ -156,7 +156,7 @@ data(CRD1)
 
 sk1 <- with(CRD1,
             SK(y ~ x,
-               data  = dfm,
+               data = dfm,
                which = 'x'))
 summary(sk1)
 @
@@ -171,7 +171,7 @@ letters displayed above each point:
 <<crd-plot, fig.cap="CRD1: treatment means with min-max dispersion bars and SK groups.">>=
 plot(sk1,
      dispersion = 'mm',
-     d.col      = 'steelblue')
+     d.col = 'steelblue')
 @
 
 % ============================================================
@@ -204,7 +204,7 @@ The analysis proceeds identically to the balanced case.
 ## Remove the first observation to create an unbalanced dataset
 u_sk1 <- with(CRD1,
               SK(y ~ x,
-                 data  = dfm[-1, ],
+                 data = dfm[-1, ],
                  which = 'x'))
 summary(u_sk1)
 @
@@ -228,7 +228,7 @@ data(RCBD)
 
 sk4 <- with(RCBD,
             SK(y ~ blk + tra,
-               data  = dfm,
+               data = dfm,
                which = 'tra'))
 summary(sk4)
 @
@@ -236,8 +236,8 @@ summary(sk4)
 <<rcbd-plot, fig.cap="RCBD: treatment means with individual CI bars.">>=
 plot(sk4,
      dispersion = 'ci',
-     d.col      = 'darkgreen',
-     d.lty      = 2)
+     d.col = 'darkgreen',
+     d.lty = 2)
 @
 
 % ============================================================
@@ -250,15 +250,15 @@ levels lead to fewer or more groups, respectively.
 ## alpha = 0.01 (stricter)
 sk_01 <- with(RCBD,
               SK(y ~ blk + tra,
-                 data      = dfm,
-                 which     = 'tra',
+                 data = dfm,
+                 which = 'tra',
                  sig.level = 0.01))
 
 ## alpha = 0.10 (looser)
 sk_10 <- with(RCBD,
               SK(y ~ blk + tra,
-                 data      = dfm,
-                 which     = 'tra',
+                 data = dfm,
+                 which = 'tra',
                  sig.level = 0.10))
 
 cat('--- sig.level = 0.01 ---\n')
@@ -283,7 +283,7 @@ data(FE)
 ## Main effect: factor N
 sk5 <- with(FE,
             SK(y ~ blk + N*P*K,
-               data  = dfm,
+               data = dfm,
                which = 'N'))
 summary(sk5)
 @
@@ -292,17 +292,17 @@ summary(sk5)
 ## Nested: levels of N within level 1 of P
 sk6 <- with(FE,
             SK(y ~ blk + N*P*K,
-               data  = dfm,
+               data = dfm,
                which = 'P:N',
-               fl1   = 1))
+               fl1 = 1))
 summary(sk6)
 
 ## Nested: levels of N within level 2 of P
 sk7 <- with(FE,
             SK(y ~ blk + N*P*K,
-               data  = dfm,
+               data = dfm,
                which = 'P:N',
-               fl1   = 2))
+               fl1 = 2))
 summary(sk7)
 @
 
@@ -320,14 +320,14 @@ data(SPE)
 ## Sub-plot factor SP (residual error, default)
 sk8 <- with(SPE,
             SK(y ~ blk + P*SP + Error(blk/P),
-               data  = dfm,
+               data = dfm,
                which = 'SP'))
 summary(sk8)
 
 ## Whole-plot factor P (must specify the blk:P error term)
 sk9 <- with(SPE,
             SK(y ~ blk + P*SP + Error(blk/P),
-               data  = dfm,
+               data = dfm,
                which = 'P',
                error = 'blk:P'))
 summary(sk9)
@@ -365,14 +365,14 @@ data(CRD2)
 
 sk10 <- with(CRD2,
              SK(y ~ x,
-                data  = dfm,
+                data = dfm,
                 which = 'x'))
 
 plot(sk10,
-     id.las     = 2,
-     yl         = FALSE,
+     id.las = 2,
+     yl = FALSE,
      dispersion = 'cip',
-     d.col      = 'steelblue')
+     d.col = 'steelblue')
 @
 
 \subsection{Comparing all four options}
@@ -380,10 +380,10 @@ plot(sk10,
 <<plot-four, fig.width=8, fig.height=7, fig.cap="The four dispersion options applied to CRD1.">>=
 op <- par(mfrow = c(2, 2), mar = c(4, 3, 4, 1))
 
-plot(sk1, dispersion = 'mm',  title = "mm  (min-max)",        d.col = 'steelblue')
-plot(sk1, dispersion = 'sd',  title = "sd  (std. deviation)", d.col = 'tomato')
-plot(sk1, dispersion = 'ci',  title = "ci  (individual CI)",  d.col = 'darkgreen')
-plot(sk1, dispersion = 'cip', title = "cip (pooled CI)",      d.col = 'purple')
+plot(sk1, dispersion = 'mm',  title = 'mm (min-max)', d.col = 'steelblue')
+plot(sk1, dispersion = 'sd',  title = 'sd (std.dev.)', d.col = 'tomato')
+plot(sk1, dispersion = 'ci',  title = 'ci (indiv.CI)', d.col = 'darkgreen')
+plot(sk1, dispersion = 'cip', title = 'cip (pooled)', d.col = 'purple')
 
 par(op)
 @
@@ -397,7 +397,7 @@ letters above the frame and drawing the treatment mean inside each box.
 ## boxplot.SK re-evaluates the data argument from the original call;
 ## pass CRD1$dfm directly so it is findable in any environment.
 sk1_bp <- SK(y ~ x,
-             data  = CRD1$dfm,
+             data = CRD1$dfm,
              which = 'x')
 
 boxplot(sk1_bp,
@@ -417,14 +417,14 @@ library(xtable)
 
 tb <- xtable(sk4,
              caption = 'RCBD: Scott \\& Knott grouping of treatment means.',
-             label   = 'tab:rcbd',
-             digits  = 3)
+             label = 'tab:rcbd',
+             digits = 3)
 print(tb,
-      type              = 'latex',
+      type = 'latex',
       caption.placement = 'top',
-      include.rownames  = TRUE,
-      booktabs          = TRUE,
-      table.placement   = 'H')
+      include.rownames = TRUE,
+      booktabs = TRUE,
+      table.placement = 'H')
 @
 
 % ============================================================
