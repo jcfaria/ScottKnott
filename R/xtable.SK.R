@@ -1,6 +1,7 @@
 xtable.SK <- function(x, ...) {
   aux1 <- x$out$Result
-  aux3 <- c(x$out$Sig.level, rep(NA, nrow(aux1) - 1))
+  aux3 <- c(x$out$Sig.level,
+            rep(NA, nrow(aux1) - 1))
 
   ## Move row names to an explicit column so that print.xtable does not
   ## generate row-name cells with inconsistent leading-space indentation.
@@ -29,8 +30,11 @@ print.xtable.SK <- function(x, include.rownames = FALSE, ...) {
   ## print.xtable indents all data rows after the first with two leading
   ## spaces, which become significant whitespace inside tabular cells and
   ## cause visual misalignment in the compiled document.  Strip that prefix.
-  out <- gsub("^ {2}([^\\\\%])", "\\1", out, perl = TRUE)
+  out <- gsub("^ {2}([^\\\\%])", "\\1",
+              out,
+              perl = TRUE)
 
-  cat(out, sep = "\n")
+  cat(out,
+      sep = "\n")
   invisible(x)
 }
