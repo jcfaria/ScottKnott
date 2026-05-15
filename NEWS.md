@@ -1,5 +1,12 @@
 # ScottKnott 1.4-0 (2026-05-14)
 
+## Bug Fixes
+
+- `m.infos.lmerMod()` and `m.infos.nest.lmerMod()`: fixed a crash when
+  `emmeans` returns asymptotic confidence interval columns (`asymp.LCL`/
+  `asymp.UCL`) instead of the df-based names (`lower.CL`/`upper.CL`).
+  The CI column names are now detected dynamically at runtime.
+
 ## New Features
 
 - Added a basic `testthat` test suite covering `SK` with `formula`, `aov`,
