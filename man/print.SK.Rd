@@ -38,7 +38,6 @@ sk <- with(RCBD,
           		  data=dfm,
           		  which='tra'))
 sk
-
 }
 
 \keyword{package}

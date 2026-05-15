@@ -368,11 +368,17 @@ sk10 <- with(CRD2,
                 data = dfm,
                 which = 'x'))
 
+col=c(rep(2, 6),
+      rep(3, 36),
+      rep(4, 1),
+      rep(5, 2))
+
 plot(sk10,
-     id.las = 2,
-     yl = FALSE,
-     dispersion = 'cip',
-     d.col = 'steelblue')
+     dispersion='cip',
+     yl=FALSE,
+     id.las=2,
+     col=col,
+     d.col=col)
 @
 
 \subsection{Comparing all four options}
@@ -408,8 +414,8 @@ sk1_bp <- SK(y ~ x,
              which = 'x')
 
 boxplot(sk1_bp,
-        mean.col    = 'red',
-        mean.lwd    = 2,
+        mean.col = 'red',
+        mean.lwd = 2,
         args.legend = list(x = 'topright'))
 @
 
@@ -430,7 +436,7 @@ tb <- xtable(sk4,
 print(tb,
       type = 'latex',
       caption.placement = 'top',
-      include.rownames = TRUE,
+      include.rownames = FALSE,
       booktabs = TRUE,
       table.placement = 'H')
 @

@@ -111,10 +111,18 @@ summary(av)
 
 sk2 <- SK(x=av,
           which='x')
+
+col=c(rep(2, 6),
+      rep(3, 36),
+      rep(4, 1),
+      rep(5, 2))
+
 plot(sk2,
      dispersion='sd',
      yl=FALSE,
-     id.las=2)
+     id.las=2,
+     col=col,
+     d.col=col)
 
 ## From: lm
 av_lm <- with(CRD2,
@@ -125,15 +133,19 @@ sk3 <- SK(x=av_lm,
           which='x')
 
 par(mfrow=c(2, 1))
-plot(sk3,
+plot(sk2,
      dispersion='ci',
+     yl=FALSE,
      id.las=2,
-     yl=FALSE)
+     col=col,
+     d.col=col)
 
-plot(sk3,
+plot(sk2,
      dispersion='cip',
+     yl=FALSE,
      id.las=2,
-     yl=FALSE)
+     col=col,
+     d.col=col)
 
 par(mfrow=c(1, 1))
 par(old.par)

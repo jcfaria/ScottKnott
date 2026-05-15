@@ -32,6 +32,7 @@
 
 \examples{
 \dontrun{
+  data(RCBD)
   lm1 <- with(RCBD,
               lm(y ~ blk + tra,
                  data=dfm))
