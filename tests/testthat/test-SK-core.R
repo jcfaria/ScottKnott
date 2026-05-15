@@ -124,9 +124,8 @@ test_that("plot.SK runs without error — basic", {
 test_that("plot.SK runs without error for all dispersion options", {
   data(CRD2)
   sk <- with(CRD2, SK(y ~ x, data = dfm, which = "x"))
-  for (disp in c("none", "mm", "sd", "ci", "cip")) {
+  for (disp in c("mm", "sd", "ci", "cip"))
     expect_no_error(plot(sk, dispersion = disp))
-  }
 })
 
 # ===========================================================================

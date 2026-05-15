@@ -8,7 +8,7 @@
 library(ScottKnott)
 data(CRD1)
 
-## From: formula — balanced
+## From: formula - balanced
 sk1 <- with(
   CRD1,
   SK(y ~ x,
@@ -34,7 +34,7 @@ plot(sk1,
   d.col='red'
 )
 
-## From: formula — unbalanced
+## From: formula - unbalanced
 u_sk1 <- with(
   CRD1,
   SK(y ~ x,
@@ -44,7 +44,7 @@ u_sk1 <- with(
 u_sk1
 summary(u_sk1)
 
-## From: aov — balanced
+## From: aov - balanced
 av1 <- with(
   CRD1,
   aov(y ~ x,
@@ -57,7 +57,7 @@ sk2 <- SK(av1)
 sk2
 summary(sk2)
 
-## From: lm — unbalanced
+## From: lm - unbalanced
 u_lm1 <- with(
   CRD1,
   lm(y ~ x,
@@ -73,7 +73,7 @@ summary(u_sk2)
 ## Example 2: many treatment groups
 data(CRD2)
 
-## From: formula — balanced
+## From: formula - balanced
 sk3 <- with(
   CRD2,
   SK(y ~ x,
@@ -88,7 +88,7 @@ plot(sk3,
   d.col='red'
 )
 
-## From: formula — unbalanced
+## From: formula - unbalanced
 u_sk3 <- with(
   CRD2,
   SK(y ~ x,
@@ -103,7 +103,7 @@ plot(u_sk3,
   d.col='red'
 )
 
-## From: aov — balanced
+## From: aov - balanced
 av2 <- with(
   CRD2,
   aov(y ~ x,
@@ -121,7 +121,7 @@ plot(sk4,
   d.col='darkgreen'
 )
 
-## From: lm — unbalanced
+## From: lm - unbalanced
 u_lm2 <- with(
   CRD2,
   lm(y ~ x,

@@ -7,7 +7,7 @@
 library(ScottKnott)
 data(RCBD)
 
-## From: formula — which='tra'
+## From: formula - which='tra'
 sk1 <- with(
   RCBD,
   SK(y ~ blk + tra,
@@ -22,7 +22,7 @@ plot(sk1,
   d.lty=3
 )
 
-## From: formula — which='blk' is implicit (first term in the model formula)
+## From: formula - which='blk' is implicit (first term in the model formula)
 sk2 <- with(
   RCBD,
   SK(y ~ blk + tra,
@@ -44,16 +44,16 @@ av1 <- with(
 )
 summary(av1)
 
-## From: aov — which='blk' is implicit (first term in the model formula)
+## From: aov - which='blk' is implicit (first term in the model formula)
 sk3 <- SK(av1)
 summary(sk3)
 
-## From: aov — which='blk' explicit
+## From: aov - which='blk' explicit
 sk4 <- SK(x=av1,
           which='blk')
 summary(sk4)
 
-## From: aov — which='tra' explicit
+## From: aov - which='tra' explicit
 sk5 <- SK(x=av1,
           which='tra')
 summary(sk5)

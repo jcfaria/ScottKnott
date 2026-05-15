@@ -7,7 +7,7 @@
 library(ScottKnott)
 data(LSD)
 
-## From: formula — testing: tra
+## From: formula - testing: tra
 sk1 <- with(
   LSD,
   SK(y ~ rows + cols + tra,
@@ -18,7 +18,7 @@ sk1 <- with(
 )
 summary(sk1)
 
-## From: formula — testing: rows
+## From: formula - testing: rows
 sk2 <- with(
   LSD,
   SK(y ~ rows + cols + tra,
@@ -37,13 +37,13 @@ av1 <- with(
 )
 summary(av1)
 
-## From: aov — testing: tra
+## From: aov - testing: tra
 sk3 <- SK(av1,
           which='tra',
           sig.level=0.052)
 summary(sk3)
 
-## From: aov — testing: cols
+## From: aov - testing: cols
 sk4 <- SK(av1,
           which='cols')
 summary(sk4)

@@ -31,7 +31,7 @@ sk2 <- with(
 )
 summary(sk2)
 
-## Nested: year1/tra — it is necessary to specify how to combine the error terms
+## Nested: year1/tra - it is necessary to specify how to combine the error terms
 sk3 <- with(
   SPET,
   SK(y ~ blk + tra*year + Error(blk/tra),
@@ -57,7 +57,7 @@ sk4 <- SK(lm1,
           fl1=1)
 summary(sk4)
 
-## Nested: year1/tra — it is necessary to specify how to combine the error terms
+## Nested: year1/tra - it is necessary to specify how to combine the error terms
 sk5 <- SK(lm1,
           which='year:tra',
           error='Within/blk:tra',
@@ -65,7 +65,7 @@ sk5 <- SK(lm1,
 summary(sk5,
         complete=FALSE)
 
-## Nested: year2/tra — it is necessary to specify how to combine the error terms
+## Nested: year2/tra - it is necessary to specify how to combine the error terms
 sk6 <- SK(lm1,
           which='year:tra',
           error='Within/blk:tra',
@@ -107,7 +107,7 @@ sk10 <- SK(av1,
            fl1=4)
 summary(sk10)
 
-## Nested: year1/tra — it is necessary to specify how to combine the error terms
+## Nested: year1/tra - it is necessary to specify how to combine the error terms
 sk11 <- SK(av1,
            which='year:tra',
            error='Within/blk:tra',
@@ -123,7 +123,7 @@ plot(sk10,
      d.col='red',
      d.lty=3)
 
-## Nested: year2/tra — it is necessary to specify how to combine the error terms
+## Nested: year2/tra - it is necessary to specify how to combine the error terms
 sk12 <- SK(av1,
            which='year:tra',
            error='Within/blk:tra',

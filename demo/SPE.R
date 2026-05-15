@@ -36,7 +36,7 @@ plot(sk2,
   d.lty=3
 )
 
-## Nested: sp1/P — it is necessary to specify how to combine the error terms
+## Nested: sp1/P - it is necessary to specify how to combine the error terms
 sk3 <- with(
   SPE,
   SK(y ~ blk + P*SP + Error(blk/P),
@@ -62,7 +62,7 @@ sk4 <- SK(lm1,
           fl1=1)
 summary(sk4)
 
-## Nested: sp1/P — it is necessary to specify how to combine the error terms
+## Nested: sp1/P - it is necessary to specify how to combine the error terms
 sk5 <- SK(lm1,
           which='SP:P',
           error='Within/blk:P',
@@ -91,7 +91,7 @@ sk7 <- SK(av1,
           error='blk:P')
 summary(sk7)
 
-## Nested: p1/SP — testing SP within level one of P
+## Nested: p1/SP - testing SP within level one of P
 sk8 <- SK(av1,
           which='P:SP',
           fl1=1)
@@ -109,7 +109,7 @@ sk10 <- SK(av1,
            fl1=3)
 summary(sk10)
 
-## Nested: sp1/P — it is necessary to specify how to combine the error terms
+## Nested: sp1/P - it is necessary to specify how to combine the error terms
 sk11 <- SK(av1,
            which='SP:P',
            error='Within/blk:P',
