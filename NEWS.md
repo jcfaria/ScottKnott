@@ -20,6 +20,12 @@
   duplicate variable `sk4` in `FE.R` (renamed to `sk5`/`sk6`),
   spurious double comma in `RCBD.R`, and wrong variable name
   `u_sk8` in `CRD.R` (renamed to `u_sk4`).
+- All R source files reformatted to consistent 2-space indentation;
+  mixed tabs and spaces eliminated throughout.
+- `man/` files revised: English corrected, two files renamed
+  (`SPET.rd` → `SPET.Rd`, `LS.Rd` → `LSD.Rd`), spurious
+  `\alias{SK.aov}` removed, and `demo(package='SK')` corrected to
+  `demo(package='ScottKnott')` in all documentation examples.
 
 ---
 
