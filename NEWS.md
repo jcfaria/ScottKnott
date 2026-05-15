@@ -30,6 +30,11 @@
   `u_sk8` in `CRD.R` (renamed to `u_sk4`).
 - All R source files reformatted to consistent 2-space indentation;
   mixed tabs and spaces eliminated throughout.
+- `xtable.SK()`: treatment names moved from row names to an explicit
+  `Treatment` column; added `print.xtable.SK()` S3 method that strips
+  the inconsistent 2-space indentation inserted by `print.xtable` in
+  all data rows except the first, which caused visible misalignment in
+  compiled LaTeX and HTML tables.
 - `man/` files revised: English corrected, two files renamed
   (`SPET.rd` → `SPET.Rd`, `LS.Rd` → `LSD.Rd`), spurious
   `\alias{SK.aov}` removed, and `demo(package='SK')` corrected to
