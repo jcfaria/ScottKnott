@@ -17,8 +17,7 @@ plot.SK <- function(x,
                     yl         = TRUE,
                     yl.lty     = 3,
                     yl.col     = 'gray',
-                    dispersion = c('none',
-                                   'mm',
+                    dispersion = c('mm',
                                    'sd',
                                    'ci',
                                    'cip'),
@@ -126,8 +125,7 @@ plot.SK <- function(x,
          cip = {
            segments(groups, icp[,1], groups, icp[,2],
                     lty = d.lty, col = d.col, ...)
-         },
-         none = NULL)
+         })
 
   if(axisy) {
     axis(2,
