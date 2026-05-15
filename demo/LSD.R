@@ -11,9 +11,9 @@ data(LSD)
 sk1 <- with(
   LSD,
   SK(y ~ rows + cols + tra,
-    data = dfm,
-    which = "tra",
-    sig.level = 0.052
+    data=dfm,
+    which='tra',
+    sig.level=0.052
   )
 )
 summary(sk1)
@@ -22,8 +22,8 @@ summary(sk1)
 sk2 <- with(
   LSD,
   SK(y ~ rows + cols + tra,
-    data = dfm,
-    which = "rows"
+    data=dfm,
+    which='rows'
   )
 )
 summary(sk2)
@@ -32,20 +32,18 @@ summary(sk2)
 av1 <- with(
   LSD,
   aov(y ~ rows + cols + tra,
-    data = dfm
+    data=dfm
   )
 )
 summary(av1)
 
 ## From: aov — testing: tra
 sk3 <- SK(av1,
-  which = "tra",
-  sig.level = 0.052
-)
+          which='tra',
+          sig.level=0.052)
 summary(sk3)
 
 ## From: aov — testing: cols
 sk4 <- SK(av1,
-  which = "cols"
-)
+          which='cols')
 summary(sk4)
