@@ -21,16 +21,16 @@ summary(sk1)
 plot(sk1)
 
 plot(sk1,
-  dispersion='mm',
-  d.lty=3
-)
-
-plot(sk1,
   dispersion='sd'
 )
 
 plot(sk1,
   dispersion='ci',
+  d.col='red'
+)
+
+plot(sk1,
+  dispersion='cip',
   d.col='red'
 )
 

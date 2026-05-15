@@ -62,16 +62,14 @@ sk5 <- SK(lm1,
           which='year:tra',
           error='Within/blk:tra',
           fl1=1)
-summary(sk5,
-        complete=FALSE)
+summary(sk5)
 
 ## Nested: year2/tra - it is necessary to specify how to combine the error terms
 sk6 <- SK(lm1,
           which='year:tra',
           error='Within/blk:tra',
           fl1=2)
-summary(sk6,
-        complete=FALSE)
+summary(sk6)
 
 ## From: aov
 av1 <- with(
@@ -92,8 +90,7 @@ summary(sk7)
 sk8 <- SK(av1,
           which='tra',
           error='blk:tra')
-summary(sk8,
-        complete=FALSE)
+summary(sk8)
 
 ## Nested: crotjuncea/year
 sk9 <- SK(av1,
@@ -112,8 +109,7 @@ sk11 <- SK(av1,
            which='year:tra',
            error='Within/blk:tra',
            fl1=1)
-summary(sk11,
-        complete=FALSE)
+summary(sk11)
 
 op <- par(mar=c(6, 3, 3, 2))
 plot(sk10,

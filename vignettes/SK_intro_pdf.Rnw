@@ -1,35 +1,109 @@
-\documentclass[a4paper, 11pt]{article}
-
-% --- Encoding and fonts
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-% --- Page layout
-\usepackage[margin=2.5cm]{geometry}
-
-% --- Hyperlinks
-\usepackage[colorlinks=true,
-            linkcolor=blue,
-            urlcolor=blue,
-            citecolor=blue]{hyperref}
-
-% --- Tables
-\usepackage{booktabs}
-
-% --- Vignette metadata
 %\VignetteIndexEntry{Introduction to the ScottKnott Package (PDF)}
 %\VignetteEngine{knitr::knitr}
 %\VignetteEncoding{UTF-8}
 
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[sc]{mathpazo}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+\geometry{
+  a4paper,
+  tmargin=2.5cm,
+  bmargin=2.5cm,
+  lmargin=2.5cm,
+  rmargin=2.5cm
+}
+
+%% Colour palette
+\definecolor{accent}{RGB}{26, 82, 118}
+\definecolor{rulegray}{RGB}{180, 180, 180}
+\definecolor{titlemuted}{RGB}{90, 90, 90}
+
+\usepackage[
+  colorlinks=true,
+  linkcolor=accent,
+  citecolor=accent,
+  urlcolor=accent
+]{hyperref}
+\hypersetup{
+  pdftitle  = {Introduction to the ScottKnott Package},
+  pdfauthor = {Faria, J. C.; Jelihovschi, E. G.; Allaman, I. B.}
+}
+
+\usepackage{url}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{booktabs}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{accent}}
+  {\thesection}{0.75em}{}
+\titlespacing*{\section}{0pt}{2.25ex plus .5ex minus .2ex}{1.25ex plus .2ex}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{titlemuted}}
+  {\thesubsection}{0.65em}{}
+
+\newcommand{\HRule}{%
+  \leavevmode\leaders\hrule height 0.6pt\hfill\kern0pt\relax}
+\newcommand{\titleaccentline}{%
+  {\color{accent}\rule{\linewidth}{1.4pt}}}
+
 % ============================================================
 \begin{document}
 
-\title{\textbf{Introduction to the ScottKnott Package}}
-\author{Faria, J. C. \and Jelihovschi, E. G. \and Allaman, I. B.}
-\date{\today}
-\maketitle
-\tableofcontents
-\newpage
+\begin{titlepage}
+  \centering
+  \vspace*{1.2cm}
+
+  {\color{rulegray}\HRule}
+  \vspace{0.55cm}
+
+  {\Huge\bfseries\color{accent}%
+    Introduction to the\\[0.3em]
+    \texttt{ScottKnott} Package}
+
+  \vspace{0.35cm}
+  {\large\color{titlemuted}%
+    Multiple Comparisons Using the Scott \& Knott Algorithm}
+
+  \vspace{0.55cm}
+  {\color{rulegray}\HRule}
+
+  \vspace{2.4cm}
+
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedright
+    \textbf{\color{titlemuted}Authors}\\[0.35em]
+    J.~C.\ \textsc{Faria}\\
+    E.~G.\ \textsc{Jelihovschi}\\
+    I.~B.\ \textsc{Allaman}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedleft
+    \textbf{\color{titlemuted}Institution}\\[0.35em]
+    Universidade Estadual\\
+    de Santa Cruz --- UESC\\
+    Ilh\'{e}us, Bahia, Brasil
+  \end{minipage}
+
+  \vfill
+
+  \titleaccentline
+  \vspace{0.6cm}
+  {\large\today}
+\end{titlepage}
 
 % knitr global options
 <<setup, include=FALSE>>=
@@ -41,6 +115,10 @@ knitr::opts_chunk$set(
   fig.align  = 'center'
 )
 @
+
+\vspace{1.25cm}
+\tableofcontents
+\newpage
 
 % ============================================================
 \section*{Overview}
@@ -69,8 +147,9 @@ library(ScottKnott)
 
 \texttt{CRD1} contains simulated data for a balanced CRD with \textbf{4
 treatment levels} and \textbf{6 replicates} per treatment. The main function
-\texttt{SK()} accepts a model formula, an \texttt{aov} object, or an \texttt{lm}
-object. The \texttt{which} argument names the factor to be compared.
+\texttt{SK()} accepts a model formula, an \texttt{aov} object, or an
+\texttt{lm} object. The \texttt{which} argument names the factor to be
+compared.
 
 <<crd-quick>>=
 data(CRD1)
@@ -262,7 +341,7 @@ summary(sk9)
 Four dispersion options are available for \texttt{plot.SK()}, as summarised in
 Table~\ref{tab:disp}.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Dispersion options available for \texttt{plot.SK()}.}
 \label{tab:disp}
@@ -344,7 +423,8 @@ print(tb,
       type              = 'latex',
       caption.placement = 'top',
       include.rownames  = TRUE,
-      booktabs          = TRUE)
+      booktabs          = TRUE,
+      table.placement   = 'H')
 @
 
 % ============================================================
