@@ -11,10 +11,10 @@ Authors@R: c(person("José C.", "Faria",
              person("Ivan B.", "Allaman",
                role = c("aut", "cre"),
                email = "ivanalaman@gmail.com"))
-Author: Jose C. Faria [aut],
-  Enio G. Jelihovschi [aut],
-  Ivan B. Allaman [aut, cre]
-Maintainer: Ivan B. Allaman <ivanalaman@gmail.com>
+Author: Faria, J. C. [aut],
+  Jelihovschi, E. G. [aut],
+  Allaman, I. B. [aut, cre]
+Maintainer: Allaman, I. B. <ivanalaman@gmail.com>
 Depends: R (>= 4.0.0)
 Imports: emmeans, xtable
 Suggests: lme4, knitr, rmarkdown, testthat (>= 3.0.0)

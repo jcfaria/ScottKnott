@@ -1,6 +1,6 @@
 ---
 title: "Introduction to the ScottKnott Package"
-author: "Jose C. Faria, Enio G. Jelihovschi, Ivan B. Allaman"
+author: "Faria, J. C., Jelihovschi, E. G., Allaman, I. B."
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >

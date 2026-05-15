@@ -172,7 +172,7 @@
 
 ## Changes
 
-- Ivan Bezerra Allaman joined the project as co-author.
+- Allaman, I. B. joined the project as co-author.
 - Sergio Oliveira no longer works on the project.
 - Revised `SK.nest.aov.R` to make the study of interactions easier.
 - Source code improved.

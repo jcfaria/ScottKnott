@@ -21,9 +21,9 @@
 }
 
 \author{
-  Jose Claudio Faria (\email{joseclaudio.faria@gmail.com})\cr
-  Enio G. Jelihovschi (\email{eniojelihovs@gmail.com})\cr
-  Ivan Bezerra Allaman (\email{ivanalaman@gmail.com})\cr
+  Faria, J. C. (\email{joseclaudio.faria@gmail.com})\cr
+  Jelihovschi, E. G. (\email{eniojelihovs@gmail.com})\cr
+  Allaman, I. B. (\email{ivanalaman@gmail.com})\cr
 }
 
 \seealso{

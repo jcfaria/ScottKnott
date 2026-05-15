@@ -25,7 +25,7 @@
 \begin{document}
 
 \title{\textbf{Introduction to the ScottKnott Package}}
-\author{Jose C. Faria \and Enio G. Jelihovschi \and Ivan B. Allaman}
+\author{Faria, J. C. \and Jelihovschi, E. G. \and Allaman, I. B.}
 \date{\today}
 \maketitle
 \tableofcontents
