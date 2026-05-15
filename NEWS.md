@@ -1,4 +1,4 @@
-# ScottKnott 1.3-4 (2026-03-03)
+# ScottKnott 1.4-0 (2026-05-14)
 
 ## New Features
 

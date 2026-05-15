@@ -1,6 +1,6 @@
 Package: ScottKnott
-Version: 1.3-4
-Date: 2026-03-03
+Version: 1.4-0
+Date: 2026-05-14
 Title: The ScottKnott Clustering Algorithm
 Authors@R: c(person("José C.", "Faria",
                role = "aut",
